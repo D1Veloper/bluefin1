@@ -12,6 +12,12 @@ set -ouex pipefail
 # this installs a package from fedora repos
 dnf5 install -y tmux 
 
+dnf5 groupinstall -y "GNOME Desktop Environment" \
+    --allowerasing \
+    --setopt=install_weak_deps=False \
+    --skip-broken \
+    && dnf5 clean all
+
 # Use a COPR Example:
 #
 # dnf5 -y copr enable ublue-os/staging
