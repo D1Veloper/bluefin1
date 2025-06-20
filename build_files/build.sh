@@ -12,6 +12,8 @@ set -ouex pipefail
 # this installs a package from fedora repos
 dnf5 install -y tmux 
 
+dnf5 install -y htop
+
 dnf5 groupinstall -y "GNOME Desktop Environment" \
     --allowerasing \
     --setopt=install_weak_deps=False \
