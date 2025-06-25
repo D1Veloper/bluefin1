@@ -8,8 +8,9 @@ COPY build_files /
 ## Other possible base images include:
 # FROM ghcr.io/ublue-os/bazzite:latest
 # FROM ghcr.io/ublue-os/bluefin-nvidia:stable
-FROM quay.io/fedora/fedora-bootc:latest
-# 
+
+FROM quay.io/fedora/fedora-sway-atomic:latest
+ 
 # ... and so on, here are more base images
 # Universal Blue Images: https://github.com/orgs/ublue-os/packages
 # Fedora base image: quay.io/fedora/fedora-bootc:41
