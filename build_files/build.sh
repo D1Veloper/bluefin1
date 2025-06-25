@@ -17,12 +17,12 @@ dnf5 install -y htop
 dnf5 install -y btop
 dnf5 install -y neofetch
 
- dnf5 install akmod-nvidia xorg-x11-drv-nvidia-cuda
+dnf5 install akmod-nvidia xorg-x11-drv-nvidia-cuda
 
 # dnf5 install -y \
 #         systemd \
 #         @gnome-desktop-environment \
-#         && dnf5 clean all
+dnf5 clean all
 
 
 
