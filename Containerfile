@@ -20,15 +20,6 @@ FROM quay.io/fedora/fedora-sway-atomic:latest
 ## make modifications desired in your image and install packages by modifying the build.sh script
 ## the following RUN directive does all the things required to run "build.sh" as recommended.
 
-dnf5 install -y https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
-dnf5 update
-dnf5 install -y tmux 
-dnf5 install -y htop
-dnf5 install -y btop
-yes | dnf5 install -y neofetch
-dnf5 install -y akmod-nvidia xorg-x11-drv-nvidia-cuda
-dnf5 clean all
-
 # RUN --mount=type=bind,from=ctx,source=/,target=/ctx \
 #    --mount=type=cache,dst=/var/cache \
 #    --mount=type=cache,dst=/var/log \
