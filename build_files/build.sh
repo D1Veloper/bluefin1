@@ -14,7 +14,7 @@ dnf5 update
 dnf5 install -y tmux 
 dnf5 install -y htop
 dnf5 install -y btop
-dnf5 install -y neofetch
+yes | dnf5 install -y neofetch
 dnf5 install -y akmod-nvidia xorg-x11-drv-nvidia-cuda
 dnf5 clean all
 
