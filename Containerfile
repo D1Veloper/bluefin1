@@ -20,7 +20,7 @@ FROM quay.io/fedora/fedora-sway-atomic:latest
 ## make modifications desired in your image and install packages by modifying the build.sh script
 ## the following RUN directive does all the things required to run "build.sh" as recommended.
 
-RUN dnf5 install 'rpmfusion-nonfree-release-y'
+RUN dnf5 install rpmfusion-nonfree-release -y
 RUN dnf5 install -y tmux 
 RUN dnf5 install -y htop
 RUN dnf5 install -y btop
