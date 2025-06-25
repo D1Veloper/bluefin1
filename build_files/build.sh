@@ -9,11 +9,11 @@ set -ouex pipefail
 # List of rpmfusion packages can be found here:
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/39/x86_64/repoview/index.html&protocol=https&redirect=1
 
-dnf install 'rpmfusion-nonfree-release-y'
 dnf5 install -y tmux 
 dnf5 install -y htop
 dnf5 install -y btop
 dnf5 install -y neofetch
+dnf5 install -y https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 dnf5 install akmod-nvidia xorg-x11-drv-nvidia-cuda
 dnf5 clean all
 
