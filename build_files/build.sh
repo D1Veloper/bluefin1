@@ -12,9 +12,9 @@ set -ouex pipefail
 dnf5 install -y https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 dnf5 update
 
-dnf5 install -y kernel-devel gcc make
-dnf5 install -y akmod-nvidia xorg-x11-drv-nvidia-cuda
-dnf5 install -y libva-nvidia-driver vulkan-loader nvidia-container-toolkit
+dnf5 install kernel-devel kernel-headers gcc make dkms acpid libglvnd-glx libglvnd-opengl libglvnd-devel pkgconfig
+dnf5 install -y akmod-nvidia 
+echo -e "blacklist nouveau\noptions nouveau modeset=0" | sudo tee /etc/modprobe.d/blacklist-nouveau.conf
 
 dnf5 install -y tmux 
 dnf5 install -y htop
