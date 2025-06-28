@@ -27,18 +27,18 @@ FROM quay.io/fedora/fedora-silverblue:latest
  #    /ctx/build.sh && / 
  #   ostree container commit
 
-#dnf5 install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
-dnf5 update
+RUN dnf5 install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm /
+    dnf5 update / 
 
-dnf5 install kernel-devel kernel-headers gcc make dkms acpid libglvnd-glx libglvnd-opengl libglvnd-devel pkgconfig
-dnf5 install -y akmod-nvidia 
-echo -e "blacklist nouveau\noptions nouveau modeset=0" | sudo tee /etc/modprobe.d/blacklist-nouveau.conf
+    dnf5 install kernel-devel kernel-headers gcc make dkms acpid libglvnd-glx libglvnd-opengl libglvnd-devel pkgconfig /
+    dnf5 install -y akmod-nvidia /
+    echo -e "blacklist nouveau\noptions nouveau modeset=0" | sudo tee /etc/modprobe.d/blacklist-nouveau.conf /
 
-dnf5 install -y tmux 
-dnf5 install -y htop
-dnf5 install -y btop
-dnf5 install -y neofetch
-dnf5 clean all
+    dnf5 install -y tmux /
+    dnf5 install -y htop /
+    dnf5 install -y btop /
+    dnf5 install -y neofetch /
+    dnf5 clean all 
 
 # RUN systemctl set-default graphical.target
 
