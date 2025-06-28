@@ -32,7 +32,6 @@ RUN dnf5 install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-rele
 
     dnf5 install kernel-devel kernel-headers gcc make dkms acpid libglvnd-glx libglvnd-opengl libglvnd-devel pkgconfig /
     dnf5 install -y akmod-nvidia /
-    echo -e "blacklist nouveau\noptions nouveau modeset=0" | sudo tee /etc/modprobe.d/blacklist-nouveau.conf /
 
     dnf5 install -y tmux /
     dnf5 install -y htop /
