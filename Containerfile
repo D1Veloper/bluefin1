@@ -24,8 +24,10 @@ FROM quay.io/fedora/fedora-silverblue:latest
  #   --mount=type=cache,dst=/var/cache \
  #   --mount=type=cache,dst=/var/log \
  #   --mount=type=tmpfs,dst=/tmp \
- RUN   /ctx/build.sh # && / 
+ #    /ctx/build.sh && / 
  #   ostree container commit
+
+RUN /ctx/build.sh
 
 # RUN systemctl set-default graphical.target
 
